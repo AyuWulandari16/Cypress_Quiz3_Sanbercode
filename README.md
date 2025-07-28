@@ -26,8 +26,7 @@ Proyek ini bertujuan untuk menguji fitur login pada website [OrangeHRM Open Sour
 | 5  | Login with both fields empty              | Dua pesan “Required” muncul                         |
 | 6  | Login with SQL injection string           | Pesan “Invalid credentials” muncul                  |
 | 7  | Login with XSS payload                    | Pesan “Invalid credentials” atau ditolak            |
-| 8  | Login with whitespace in username/password| Pesan “Required” atau “Invalid credentials” muncul  |
-| 9  | Login with uppercase username             | Login berhasil (case-insensitive)                   |
-| 10 | Login with long input (100+ chars)        | Pesan “Invalid credentials” atau ditolak            |
+| 8  | Login with uppercase username             | Login berhasil (case-insensitive)                   |
+| 9 | Login with long input (100+ chars)        | Pesan “Invalid credentials” atau ditolak            |
 
 ---

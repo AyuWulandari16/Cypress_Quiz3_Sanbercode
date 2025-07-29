@@ -20,6 +20,7 @@ Proyek ini bertujuan untuk menguji fitur login pada website [OrangeHRM Open Sour
 ```bash
 npx cypress open
 
+```
 ---
 
 ## 🧾 Test Case List

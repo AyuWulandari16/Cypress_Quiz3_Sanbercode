@@ -37,6 +37,13 @@ describe("OrangeHRM Login Feature", () => {
     cy.get('span:contains("Required")').should("have.length", 2);
   });
 
+  it('Login with whitespace only in username and password', () => {
+    cy.get('input[name="username"]').type('   ');
+    cy.get('input[name="password"]').type('   ');
+    cy.get('button[type="submit"]').click();
+    cy.contains('Required').should('exist'); // or 'Invalid credentials'
+  });
+
   it("Login with SQL injection string", () => {
     cy.get('input[name="username"]').type(`' OR 1=1 --`);
     cy.get('input[name="password"]').type("anything");
@@ -64,5 +71,11 @@ describe("OrangeHRM Login Feature", () => {
     cy.get('input[name="password"]').type(longText);
     cy.get('button[type="submit"]').click();
     cy.contains("Invalid credentials").should("be.visible");
+  });
+
+  it('Login using only Enter key', () => {
+    cy.get('input[name="username"]').type('Admin');
+    cy.get('input[name="password"]').type('admin123{enter}');
+    cy.url().should('include', '/dashboard');
   });
 });
